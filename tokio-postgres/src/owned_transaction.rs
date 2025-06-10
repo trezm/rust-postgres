@@ -56,12 +56,16 @@ impl Drop for OwnedTransaction {
 }
 
 impl OwnedTransaction {
-    pub(crate) fn new(client: Client) -> OwnedTransaction {
+    pub fn new(client: Client) -> OwnedTransaction {
         OwnedTransaction {
             client,
             savepoint: None,
             done: false,
         }
+    }
+
+    pub fn client(&self) -> &Client {
+        &self.client
     }
 
     /// Consumes the transaction, committing all changes made within it.
