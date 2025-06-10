@@ -128,6 +128,7 @@ pub use crate::copy_out::CopyOutStream;
 use crate::error::DbError;
 pub use crate::error::Error;
 pub use crate::generic_client::GenericClient;
+pub use crate::owned_transaction::OwnedTransaction;
 pub use crate::portal::Portal;
 pub use crate::query::RowStream;
 pub use crate::row::{Row, SimpleQueryRow};
@@ -167,6 +168,7 @@ mod generic_client;
 #[cfg(not(target_arch = "wasm32"))]
 mod keepalive;
 mod maybe_tls_stream;
+mod owned_transaction;
 mod portal;
 mod prepare;
 mod query;
